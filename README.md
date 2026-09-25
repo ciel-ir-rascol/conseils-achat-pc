@@ -24,11 +24,10 @@ Pendant les deux ans, votre PC portable fera tourner en même temps des logiciel
 
 | Logiciel | Usage en cours | Ce qu'il consomme |
 |---|---|---|
-| **Suite JetBrains** (IntelliJ, PyCharm, CLion…) | Développement | 2 à 4 Go de RAM par IDE ouvert |
+| **Suite JetBrains** (PyCharm, CLion…) | Développement | 2 à 4 Go de RAM par IDE ouvert |
 | **Android Studio** + émulateur | Applications mobiles | 4 à 8 Go de RAM, processeur, virtualisation matérielle |
-| **VirtualBox / VMware** | Serveurs Windows et Linux, pare-feu, maquettes réseau | 2 à 4 Go de RAM **par machine virtuelle**, beaucoup d'espace disque |
+| **VirtualBox** | Serveurs Windows et Linux, pare-feu, maquettes réseau | 1 à 4 Go de RAM **par machine virtuelle** |
 | **Docker** | Conteneurs, services web, bases de données | 2 à 6 Go de RAM selon les services |
-| **Kali Linux** (en VM) | Cybersécurité | 2 à 4 Go de RAM |
 | **Packet Tracer / Wireshark** | Réseau | Léger |
 
 Un TP classique, c'est par exemple : 2 ou 3 VM + un IDE + un navigateur avec 15 onglets. **Ça dépasse vite 16 Go de RAM.**
@@ -43,9 +42,9 @@ Un TP classique, c'est par exemple : 2 ou 3 VM + un IDE + un navigateur avec 15 
 |---|---|---|---|
 | **RAM** | 16 Go | **32 Go**, ou 16 Go **extensibles** | Les VM et les IDE consomment beaucoup de RAM |
 | **Processeur** | x86 récent, 6 cœurs : AMD Ryzen 5 (7000 ou plus récent), Intel Core i5 (12e gén. ou plus récent), Core Ultra 5 | Ryzen 7 / Core i7 / Core Ultra 7 | Il faut un processeur **x86** pour faire tourner les VM Windows et Linux du cours |
-| **Stockage** | SSD NVMe **512 Go** | 1 To | Une VM occupe 20 à 60 Go, Android Studio et ses images plus de 30 Go |
-| **Écran** | 14", Full HD (1920×1080) | 14" à 16", 1920×1200 ou plus, mat | Pour travailler à plusieurs fenêtres côte à côte |
-| **Système** | Windows 11 Famille | Windows 11 Pro | Pro ajoute Hyper-V, le Bureau à distance et BitLocker. Utile, pas indispensable |
+| **Stockage** | SSD NVMe **256 Go** | 512 Go | Les VM Linux consomment peu d'espace (quelques Go). Android Studio et ses images d'émulateur, Docker et les VM Windows en demandent davantage |
+| **Écran** | 13" ou 14", Full HD (1920×1080) | 13" à 16", 1920×1200 ou plus, mat, **500 cd/m² (nits)** | Le 13" est très intéressant pour la portabilité. Une luminosité élevée permet de travailler confortablement partout, même près d'une fenêtre |
+| **Système** | Windows 11, ou **sans système** | Windows 11, ou sans système pour installer Linux | Un PC vendu sans OS (souvent « FreeDOS ») coûte moins cher : idéal si vous comptez installer Linux. Windows 11 Pro (Hyper-V, Bureau à distance, BitLocker) est utile mais pas indispensable |
 | **Ports** | 1 USB-C, 1 USB-A, HDMI | Plus un **port Ethernet RJ45** | En réseau, on se branche souvent en filaire. Sinon, prévoir un adaptateur USB → RJ45 (~15 €) |
 | **Autonomie** | 6 h réelles | 8 h ou plus | Pour tenir une journée de cours |
 | **Poids** | < 2 kg | < 1,6 kg | Vous le porterez tous les jours |
@@ -84,7 +83,7 @@ C'est le budget le plus raisonnable pour du neuf sans mauvaise surprise.
 | Dell | Dell 14 Plus, **Dell Pro 14** (ex-Latitude 3000/5000) | Gamme Pro : solide, bonne garantie |
 | HP | **ProBook 4 / ProBook 440–460**, OmniBook 5 | ProBook : gamme pro, souvent RJ45, RAM extensible |
 
-Visez : **Ryzen 5 / Core Ultra 5, 16 Go (extensibles si possible), SSD 512 Go**.
+Visez : **Ryzen 5 / Core Ultra 5, 16 Go (extensibles si possible), SSD 256 à 512 Go**.
 
 ### Autour de 1000 €
 
@@ -95,9 +94,10 @@ Vous pouvez viser **32 Go** ou un appareil haut de gamme.
 | Lenovo | **ThinkPad T14 / T16**, ThinkPad E14 en 32 Go, ThinkBook 14+ / 16+ | La référence pour durer. T14 AMD : RAM souvent extensible |
 | Dell | Dell Pro 14 / Dell Pro 14 Plus (ex-Latitude 5000/7000) | Très bonne qualité de fabrication |
 | HP | **EliteBook 6 / EliteBook 8** (ex-EliteBook 640/840) | Finition haut de gamme, bons écrans |
+| Dell | **XPS 13 (2026)** : Intel Core 5 320, écran 13,4" 2,5K 120 Hz, SSD 512 Go, 1 kg | Ultraportable très réussi. **Attention** : ~1149 € en 8 Go et **~1299 € en 16 Go** (prix public, sept. 2026), RAM soudée, pas de RJ45. Ne prendre que la version **16 Go**, en promotion ou avec la remise étudiante |
 | Apple | MacBook Air M5 16 Go | Voir [section 5](#5-et-un-mac-) : excellent matériel, avec des limites à connaître |
 
-Visez : **Ryzen 7 / Core Ultra 7, 32 Go, SSD 1 To**, ou au moins 16 Go avec possibilité d'extension.
+Visez : **Ryzen 7 / Core Ultra 7, 32 Go, SSD 512 Go à 1 To**, ou au moins 16 Go avec possibilité d'extension.
 
 ---
 
@@ -126,15 +126,18 @@ Processeur minimum : **Intel Core i5 de 11e génération** ou **AMD Ryzen 5 PRO 
 
 - **Grade** : grade A ou « Très bon état ». Évitez les grades C, avec des rayures et un clavier usé.
 - **RAM : 16 Go minimum**, idéalement 32 Go. Si la RAM est extensible, vous pouvez acheter en 16 Go et ajouter une barrette plus tard.
-- **SSD de 512 Go minimum.**
+- **SSD de 256 Go minimum**, 512 Go si possible.
 - **État de la batterie** : demandez sa capacité restante (80 % ou plus). Certains vendeurs remplacent la batterie.
 - **Garantie de 12 mois minimum** (certains vendeurs proposent 24 mois).
-- **Windows 11 installé avec une licence valide.**
+- **Windows 11 installé avec une licence valide**, sauf si vous comptez installer Linux.
 - **Clavier AZERTY français** : certains PC viennent d'autres pays (QWERTY, QWERTZ).
 
 ### Où acheter
 
-Préférez des **reconditionneurs spécialisés** qui donnent une garantie : sites de reconditionnement grand public, revendeurs spécialisés dans le matériel pro, ou les programmes de reconditionné des constructeurs eux-mêmes. Évitez les ventes entre particuliers sans garantie si vous ne savez pas tester une machine.
+- **Les sites des marques** : Apple (Produits reconditionnés certifiés), Lenovo, Dell et HP ont tous une boutique de reconditionné/outlet avec garantie constructeur.
+- **Back Market** et les **reconditionneurs spécialisés** : garantie d'au moins 12 mois et droit de retour.
+
+> **Attention à eBay et Leboncoin** : entre particuliers, il n'y a souvent **ni garantie ni possibilité de retour**. Même chez un vendeur professionnel sur ces plateformes, vérifiez les conditions de retour et la durée de garantie **avant** de payer. En cas de panne, vous n'aurez aucun recours.
 
 ---
 
@@ -147,7 +150,7 @@ Les Mac récents sont **d'excellentes machines** : très bonne autonomie (15 h o
 Les Mac utilisent des puces **ARM** (M1 à M5, A18 Pro), pas des processeurs x86 comme les PC Windows.
 
 - **On ne peut pas faire tourner nativement des VM x86** : ni Windows Server x86, ni les distributions Linux et appliances en x86. L'émulation existe (UTM) mais elle est **très lente**.
-- On peut faire tourner des VM **ARM** : Debian, Ubuntu, Kali et Windows 11 ARM, avec **VirtualBox 7.1+**, **VMware Fusion** (gratuit) ou **UTM**.
+- On peut faire tourner des VM **ARM** : Debian, Ubuntu et Windows 11 ARM, avec **VirtualBox 7.1+** ou **UTM**.
 - **Pour les VM des TP, votre enseignant fournit une OVA compatible avec les puces M.** Vous pourrez donc suivre les TP. En revanche, vous ne pourrez pas toujours importer directement une VM trouvée sur Internet ou fournie en x86.
 
 ### Ce qui fonctionne bien sur Mac
@@ -158,14 +161,14 @@ Les Mac utilisent des puces **ARM** (M1 à M5, A18 Pro), pas des processeurs x86
 | Android Studio + émulateur | Oui, natif (images ARM), très fluide |
 | Docker Desktop | Oui (images ARM, la plupart des images courantes existent) |
 | Packet Tracer, Wireshark | Oui |
-| VM Linux ARM, Kali ARM | Oui (VirtualBox, VMware Fusion, UTM) |
+| VM Linux ARM | Oui (VirtualBox, UTM) |
 | VM x86 (Windows Server, appliances) | **Non**, ou très lent en émulation |
 
 ### Quel Mac choisir ?
 
 | Modèle | Prix (sept. 2026) | Avis |
 |---|---|---|
-| **MacBook Neo** (A18 Pro, **8 Go**) | ~599 € en tarif étudiant | **À éviter pour ce BTS.** 8 Go de RAM **non extensibles** : insuffisant pour faire tourner ensemble un IDE, Android Studio, Docker et une VM. Le prix est attractif, mais vous serez bloqué dès les premiers TP chargés |
+| **MacBook Neo** (A18 Pro, **8 Go**) | ~599 € en tarif étudiant | **À éviter pour ce BTS.** Il n'existe **qu'en 8 Go** (pas de version 16 Go), **non extensibles** : insuffisant pour faire tourner ensemble un IDE, Android Studio, Docker et une VM. Le prix est attractif, mais vous serez bloqué dès les premiers TP chargés |
 | **MacBook Air M5 13"** (16 Go / 512 Go) | ~1100 € au prix public, moins en tarif éducation | **Le bon choix Mac**, à la limite haute du budget |
 | MacBook Air M2/M3 **16 Go** reconditionné | Variable | Alternative correcte, en vérifiant bien les **16 Go** |
 
@@ -182,8 +185,8 @@ Les Mac utilisent des puces **ARM** (M1 à M5, A18 Pro), pas des processeurs x86
 | Piège | Pourquoi c'est un problème |
 |---|---|
 | **8 Go de RAM** | Insuffisant dès le premier trimestre. C'est le piège n°1 des offres « pas chères » |
-| **PC Windows avec processeur Snapdragon X / « ARM »** | Mêmes limites que le Mac pour les VM x86 (VirtualBox et VMware x86 ne fonctionnent pas), et certains logiciels ou pilotes ne sont pas compatibles. **Vérifiez que le processeur est un AMD Ryzen ou un Intel Core / Core Ultra** |
-| **Stockage eMMC ou SSD de 128/256 Go** | Trop lent ou trop petit pour les VM et les IDE |
+| **PC Windows avec processeur Snapdragon X / « ARM »** | Mêmes limites que le Mac pour les VM x86 (les VM x86 ne fonctionnent pas dans VirtualBox), et certains logiciels ou pilotes ne sont pas compatibles. **Vérifiez que le processeur est un AMD Ryzen ou un Intel Core / Core Ultra** |
+| **Stockage eMMC ou SSD de 128 Go** | Trop lent ou trop petit pour les VM et les IDE |
 | **Chromebook** | Inadapté : impossible d'installer VirtualBox, les IDE complets et Packet Tracer correctement |
 | **Windows en « mode S »** | Bloque l'installation de logiciels hors Microsoft Store. On peut en sortir gratuitement, mais c'est définitif |
 | **PC « gamer » d'entrée de gamme** | Lourds, bruyants, 2 à 4 h d'autonomie. La carte graphique ne vous sert à rien ici |
@@ -193,7 +196,7 @@ Les Mac utilisent des puces **ARM** (M1 à M5, A18 Pro), pas des processeurs x86
 
 ### Après l'achat : activer la virtualisation
 
-Pour VirtualBox, VMware, Docker et l'émulateur Android, la **virtualisation matérielle** doit être activée dans le BIOS/UEFI : **Intel VT-x** ou **AMD-V / SVM**. Elle l'est généralement par défaut. Si une VM refuse de démarrer, c'est la première chose à vérifier. Nous vous montrerons comment faire en cours.
+Pour VirtualBox, Docker et l'émulateur Android, la **virtualisation matérielle** doit être activée dans le BIOS/UEFI : **Intel VT-x** ou **AMD-V / SVM**. Elle l'est généralement par défaut. Si une VM refuse de démarrer, c'est la première chose à vérifier. Nous vous montrerons comment faire en cours.
 
 ---
 
@@ -226,12 +229,12 @@ Si vous n'êtes pas pressé, **attendre le Black Friday** peut faire économiser
 
 - [ ] Processeur **x86** : AMD Ryzen 5/7 ou Intel Core i5/i7 / Core Ultra 5/7 (**pas de Snapdragon**), ou Mac avec 16 Go en connaissant les limites
 - [ ] **16 Go de RAM minimum**, 32 Go idéal, extensible si possible
-- [ ] **SSD NVMe de 512 Go minimum**
-- [ ] Écran **14" ou plus**, Full HD minimum
+- [ ] **SSD NVMe de 256 Go minimum** (512 Go si possible)
+- [ ] Écran **13" ou plus**, Full HD minimum, 500 cd/m² idéalement
 - [ ] Port **RJ45**, ou un adaptateur USB → RJ45 prévu
 - [ ] Clavier **AZERTY**
 - [ ] Autonomie réelle d'au moins **6 heures** (lire des tests, pas seulement la fiche constructeur)
-- [ ] **Pas en « mode S »**, pas de Chromebook
+- [ ] Windows 11 ou **sans système** (pour Linux), **pas en « mode S »**, pas de Chromebook
 - [ ] **Garantie** : 2 ans en neuf, 1 an minimum en reconditionné
 - [ ] Remise **éducation / étudiante** vérifiée
 - [ ] Une **housse de protection**
