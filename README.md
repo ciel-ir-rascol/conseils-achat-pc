@@ -147,7 +147,7 @@ Les Mac récents sont **d'excellentes machines** : très bonne autonomie (15 h o
 
 ### La contrainte : la puce ARM (Apple Silicon)
 
-Les Mac utilisent des puces **ARM** (M1 à M5, A18 Pro), pas des processeurs x86 comme les PC Windows.
+Les Mac utilisent des puces **ARM** (M1 à M5), pas des processeurs x86 comme les PC Windows.
 
 - **On ne peut pas faire tourner nativement des VM x86** : ni Windows Server x86, ni les distributions Linux et appliances en x86. L'émulation existe (UTM) mais elle est **très lente**.
 - On peut faire tourner des VM **ARM** : Debian, Ubuntu et Windows 11 ARM, avec **VirtualBox 7.1+** ou **UTM**.
@@ -168,7 +168,6 @@ Les Mac utilisent des puces **ARM** (M1 à M5, A18 Pro), pas des processeurs x86
 
 | Modèle | Prix (sept. 2026) | Avis |
 |---|---|---|
-| **MacBook Neo** (A18 Pro, **8 Go**) | ~599 € en tarif étudiant | **À éviter pour ce BTS.** Il n'existe **qu'en 8 Go** (pas de version 16 Go), **non extensibles** : insuffisant pour faire tourner ensemble un IDE, Android Studio, Docker et une VM. Le prix est attractif, mais vous serez bloqué dès les premiers TP chargés |
 | **MacBook Air M5 13"** (16 Go / 512 Go) | ~1100 € au prix public, moins en tarif éducation | **Le bon choix Mac**, à la limite haute du budget |
 | MacBook Air M2/M3 **16 Go** reconditionné | Variable | Alternative correcte, en vérifiant bien les **16 Go** |
 
